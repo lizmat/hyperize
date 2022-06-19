@@ -1,0 +1,22 @@
+use Test;
+use hyperize;
+
+plan 6;
+
+my @a;
+
+my $hyper := @a.&hyperize(42).configuration;
+is $hyper.batch,  42, 'batch on hyper ok (1)';
+
+$hyper := @a.&hyperize(12, 16).configuration;
+is $hyper.batch,  12, 'batch on hyper ok (2)';
+is $hyper.degree, 16, 'degree on hyper ok';
+
+my $race := @a.&hyperize(42).configuration;
+is $race.batch,  42, 'batch on race ok (1)';
+
+$race := @a.&hyperize(12, 16).configuration;
+is $race.batch,  12, 'batch on race ok (2)';
+is $race.degree, 16, 'degree on race ok';
+
+# vim: expandtab shiftwidth=4

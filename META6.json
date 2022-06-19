@@ -1,0 +1,29 @@
+{
+  "auth": "zef:lizmat",
+  "authors": [
+    "Elizabeth Mattijsen"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+  ],
+  "description": "helper subs to hyperize iterables with defaults",
+  "license": "Artistic-2.0",
+  "name": "hyperize",
+  "perl": "6.d",
+  "provides": {
+    "hyperize": "lib/hyperize.rakumod"
+  },
+  "resources": [
+  ],
+  "source-url": "",
+  "tags": [
+    "HYPER",
+    "RACE",
+    "CLI",
+    "MAIN"
+  ],
+  "test-depends": [
+  ],
+  "version": "0.0.1"
+}
