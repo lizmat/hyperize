@@ -24,6 +24,8 @@ hyperize exports two subroutines to make it easier to handle defaults for `batch
 
 The problem with these methods, is that they (currently) do not take undefined values for their `:batch` and `:degree` arguments, forcing the caller to decide what sane defaults are. With the subroutines provided by this module, you don't have to worry about that as a developer of CLI scripts anymore.
 
+If there is a `degree` specified, and its **1**, then the first argument (the invocant if used as `.&hyperize`) will be returned, as there will be no sense in trying to `hyper` or `race` anything.
+
 EXPORTED SUBROUTINES
 ====================
 

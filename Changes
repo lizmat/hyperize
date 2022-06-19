@@ -2,5 +2,8 @@ Revision history for hyperize
 
 {{$NEXT}}
 
+0.0.2  2022-06-19T14:25:08+02:00
+    - Return invocant for degree == 1
+
 0.0.1  2022-06-19T14:06:52+02:00
     - Initial version

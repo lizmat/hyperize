@@ -6,15 +6,19 @@ INIT with Iterable.hyper.configuration {
 }
 
 my sub hyperize(\iterable, $batch, $degree?) is export {
-    iterable.hyper:
-      :batch( $batch  // $default-batch),
-      :degree($degree // $default-degree)
+    $degree.defined && $degree == 1
+      ?? iterable
+      !! iterable.hyper:
+           :batch( $batch  // $default-batch),
+           :degree($degree // $default-degree)
 }
 
 my sub racify(\iterable, $batch, $degree?) is export {
-    iterable.race:
-      :batch( $batch  // $default-batch),
-      :degree($degree // $default-degree)
+    $degree.defined && $degree == 1
+      ?? iterable
+      !! iterable.race:
+           :batch( $batch  // $default-batch),
+           :degree($degree // $default-degree)
 }
 
 =begin pod
@@ -47,6 +51,10 @@ undefined values for their C<:batch> and C<:degree> arguments, forcing
 the caller to decide what sane defaults are.  With the subroutines
 provided by this module, you don't have to worry about that as a developer
 of CLI scripts anymore.
+
+If there is a C<degree> specified, and its B<1>, then the first argument
+(the invocant if used as C<.&hyperize>) will be returned, as there will be
+no sense in trying to C<hyper> or C<race> anything.
 
 =head1 EXPORTED SUBROUTINES
 

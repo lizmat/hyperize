@@ -1,7 +1,7 @@
 use Test;
 use hyperize;
 
-plan 6;
+plan 8;
 
 my @a;
 
@@ -12,11 +12,17 @@ $hyper := @a.&hyperize(12, 16).configuration;
 is $hyper.batch,  12, 'batch on hyper ok (2)';
 is $hyper.degree, 16, 'degree on hyper ok';
 
+$hyper := @a.&hyperize(12,1);
+ok $hyper =:= @a, 'hyper was the invocant returned for degree == 1';
+
 my $race := @a.&hyperize(42).configuration;
 is $race.batch,  42, 'batch on race ok (1)';
 
 $race := @a.&hyperize(12, 16).configuration;
 is $race.batch,  12, 'batch on race ok (2)';
 is $race.degree, 16, 'degree on race ok';
+
+$race := @a.&racify(12,1);
+ok $race =:= @a, 'race was the invocant returned for degree == 1';
 
 # vim: expandtab shiftwidth=4
