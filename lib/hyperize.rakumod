@@ -5,7 +5,7 @@ INIT with Iterable.hyper.configuration {
     $default-degree := .degree;
 }
 
-my sub hyperize(\iterable, $batch, $degree?) is export {
+my sub hyperize(\iterable, $batch, $degree?, *%_) is export {
     $degree.defined && $degree == 1
       ?? iterable
       !! iterable.hyper:
@@ -13,7 +13,7 @@ my sub hyperize(\iterable, $batch, $degree?) is export {
            :degree($degree // $default-degree)
 }
 
-my sub racify(\iterable, $batch, $degree?) is export {
+my sub racify(\iterable, $batch, $degree?, *%_) is export {
     $degree.defined && $degree == 1
       ?? iterable
       !! iterable.race:
@@ -109,7 +109,7 @@ deal to me!
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2022 Elizabeth Mattijsen
+Copyright 2022, 2024 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 

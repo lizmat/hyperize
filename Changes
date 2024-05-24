@@ -2,6 +2,11 @@ Revision history for hyperize
 
 {{$NEXT}}
 
+0.0.3  2024-05-24T18:02:23+02:00
+    - Make sure any named arguments are ignored.  To allow for plug-in
+      compatibility with ParaSeq
+    - Update copyright year
+
 0.0.2  2022-06-19T14:25:08+02:00
     - Return invocant for degree == 1
 
