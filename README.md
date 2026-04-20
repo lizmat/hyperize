@@ -38,7 +38,7 @@ hyperize
 @foo.&hyperize($batch, $degree).map: { ...  }
 ```
 
-The `hyperize` subroutine takes 2 or 3 arguments. The first argument is an `Iterable` on which a hyper sequence (aka `HyperSeq`) should be returned. This is then typically the invocant of a `.map` of `.grep`.
+The `hyperize` subroutine takes 2 or 3 arguments. The first argument is an `Iterable` on which a hyper sequence (aka `HyperSeq`) should be returned. This is then typically the invocant of a `.map` or `.grep`.
 
 The second argument is the size of batches that should be used (aka the `:batch` argument to `.hyper`. If the value specified is undefined, then the default value for batches will be assumed (whatever that may be, as determined by the core).
 

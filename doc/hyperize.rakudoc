@@ -47,7 +47,7 @@ no sense in trying to C<hyper> or C<race> anything.
 
 The C<hyperize> subroutine takes 2 or 3 arguments.  The first argument
 is an C<Iterable> on which a hyper sequence (aka C<HyperSeq>) should be
-returned. This is then typically the invocant of a C<.map> of C<.grep>.
+returned. This is then typically the invocant of a C<.map> or C<.grep>.
 
 The second argument is the size of batches that should be used (aka the
 C<:batch> argument to C<.hyper>.  If the value specified is undefined,
